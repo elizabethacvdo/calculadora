@@ -5,7 +5,6 @@
  */
 package calcu;
 
-import interfaz.intefcalcu;
 import java.awt.Color;
 import javax.swing.JFrame;
 
@@ -20,12 +19,13 @@ public class Calcu {
      */
     public static void main(String[] args) {
         JFrame ventana=new JFrame();
+        
         //ventana.setSize(500, 500);
         ventana.setContentPane(new intefcalcu());
         ventana.setTitle("calculadora");
         ventana.setLocationRelativeTo(null);
         ventana.pack();
-        ventana.setBounds(100, 100, 500,500);
+        ventana.setBounds(300, 100, 500,500);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setVisible(true);
     }
