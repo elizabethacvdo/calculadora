@@ -3,13 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calcu;
+package operaciones;
+
+import operaciones.Aritmetica;
 
 /**
  *
  * @author LN710Q
  */
-public interface Aritmetica {
+public class Suma implements Aritmetica{
+
+    @Override
+    public double operar(double a, double b) {
+        return a+b;
+    }
     
-    double operar(double a,double b);
 }

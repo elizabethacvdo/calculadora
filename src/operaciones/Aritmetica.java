@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calcu;
+package operaciones;
 
 /**
  *
  * @author LN710Q
  */
-public class Dividir implements Aritmetica{
-
-    @Override
-    public double operar(double a, double b) {
-        return a/b;
-    }
+public interface Aritmetica {
     
+    double operar(double a,double b);
 }

@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calcu;
+package Convertir;
 
 /**
  *
- * @author LN710Q
+ * @author Mery Acevedo
  */
-public class Suma implements Aritmetica{
-
-    @Override
-    public double operar(double a, double b) {
-        return a+b;
-    }
+public interface Convertir {
+    
+    int convertir(int numero);
     
 }

@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calcu;
+package operaciones;
+
+import operaciones.Aritmetica;
 
 /**
  *
  * @author LN710Q
  */
-public class Resta implements Aritmetica{
+public class Multiplicacion implements Aritmetica{
 
     @Override
     public double operar(double a, double b) {
-        return a-b;
+        return a*b;
     }
     
 }

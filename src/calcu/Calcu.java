@@ -5,6 +5,10 @@
  */
 package calcu;
 
+import interfaz.intefcalcu;
+import java.awt.Color;
+import javax.swing.JFrame;
+
 /**
  *
  * @author LN710Q
@@ -15,7 +19,15 @@ public class Calcu {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        JFrame ventana=new JFrame();
+        //ventana.setSize(500, 500);
+        ventana.setContentPane(new intefcalcu());
+        ventana.setTitle("calculadora");
+        ventana.setLocationRelativeTo(null);
+        ventana.pack();
+        ventana.setBounds(100, 100, 500,500);
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setVisible(true);
     }
     
 }

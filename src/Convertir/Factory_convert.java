@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calcu;
+package Convertir;
+
+import operaciones.Aritmetica;
+import calcu.Abstracfactoryfuncion;
 
 /**
  *
  * @author LN710Q
  */
-public class convert implements Factoryfuncio {
+public class Factory_convert implements Abstracfactoryfuncion {
 
     @Override
     public Aritmetica getaritmetica(int a) {
@@ -17,9 +20,12 @@ public class convert implements Factoryfuncio {
     }
 
     @Override
-    public convert getconvert(int num) {
+    public Convertir getconvert(int num) {
         switch(num){
-            
+            case 1 :
+                return new binario();
+            default:
+                return null;
         }
     }
     

@@ -5,17 +5,21 @@
  */
 package calcu;
 
+import calcu.Abstracfactoryfuncion;
+import operaciones.Factoriaritmetica;
+import Convertir.Factory_convert;
+
 /**
  *
  * @author LN710Q
  */
 public class Factoriproducerop {
-    public static Factoryfuncio getfactory(int tipo){
+    public static Abstracfactoryfuncion getfactorys(int tipo){
         switch(tipo){
             case 1:
               return new Factoriaritmetica();  
             case 2:
-                return  new convert();
+                return  new Factory_convert();
         }
         return null;
     }
