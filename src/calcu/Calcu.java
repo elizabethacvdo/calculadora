@@ -5,7 +5,6 @@
  */
 package calcu;
 
-import java.awt.Color;
 import javax.swing.JFrame;
 
 /**

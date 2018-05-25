@@ -24,6 +24,8 @@ public class Factory_convert implements Abstracfactoryfuncion {
         switch(num){
             case 1 :
                 return new binario();
+            case 2:
+                return new hexadecimal();
             default:
                 return null;
         }

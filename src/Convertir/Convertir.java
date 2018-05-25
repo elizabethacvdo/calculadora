@@ -11,6 +11,6 @@ package Convertir;
  */
 public interface Convertir {
     
-    int convertir(int numero);
+    String convertir(int numero);
     
 }

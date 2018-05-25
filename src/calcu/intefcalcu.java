@@ -1,10 +1,10 @@
 package calcu;
 
+import Convertir.Convertir;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.InputMismatchException;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,19 +21,17 @@ public class intefcalcu extends JPanel {
     private int WIDFT = 120, HEIGFT = 80;
     private int WIDBT = 80, HEIGBT = 30;
     private String algo = "";
-    private int algo2;
-    public JTextField text1, text2, text3;
-    public JButton buttonoperacion, buttonconvert, b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bsuma, bresta, bmult, bdiv, bresultado;
+    private int algo2,f=0;
+    public JTextField text1, text3;
+    public JButton buttonoperacion, buttonconvert, b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bsuma, bresta, bmult, bdiv, bresultado,bbinario,bhexa,borrar;
     private double opcion = 0.0;
 
     public intefcalcu() {
 
         text1 = new JTextField();
-        text1.setBounds(new Rectangle(300, 200, 120, 30));
-        text2 = new JTextField();
-        text2.setBounds(new Rectangle(300, 250, 120, 30));
+        text1.setBounds(new Rectangle(300, 250, 120, 30));
         text3 = new JTextField();
-        text3.setBounds(new Rectangle(300, 300, 220, 30));
+        text3.setBounds(new Rectangle(300, 300, 170, 30));
 
         buttonoperacion = new JButton("operacion");
         buttonoperacion.setBounds(new Rectangle(50, 30, 120, 30));
@@ -70,13 +68,19 @@ public class intefcalcu extends JPanel {
         b0.setBounds(new Rectangle(100, 300, 50, 50));
         bresultado = new JButton("resultado");
         bresultado.setBounds(new Rectangle(50, 375, 100, 50));
-
+        bbinario = new JButton("binario");
+        bbinario.setBounds(new Rectangle(300,70 , 100, 50));
+        bhexa = new JButton("hexadecimal");
+        bhexa.setBounds(new Rectangle(300,130 , 100, 50));
+        borrar = new JButton("limpiar");
+        borrar.setBounds(new Rectangle(300,350 , 100, 50));
+        
         text1.setEditable(false);
-        text2.setEditable(false);
         text3.setEditable(false);
 
-        Abstracfactoryfuncion factori;
+        Abstracfactoryfuncion factori,factori2;
         factori = Factoriproducerop.getfactorys(1);
+        factori2 =Factoriproducerop.getfactorys(2);
 
         bsuma.addActionListener((ActionEvent ae) -> {
 
@@ -169,14 +173,41 @@ public class intefcalcu extends JPanel {
                         String u = String.valueOf(divi.operar(opcion, Double.valueOf(text1.getText())));
                         text3.setText(u);
                         break;
-
+                    case 5:
+                        Convertir binario;
+                        binario=factori2.getconvert(1);
+                        String a = binario.convertir(f);
+                        text3.setText(a);
+                        break;
+                    case 6:
+                        Convertir hexadecimal;
+                        hexadecimal=factori2.getconvert(2);
+                        String b = hexadecimal.convertir(f);
+                        text3.setText(b);
+                        break;
                 }
 
             }
         });
+        
+         bbinario.addActionListener((ActionEvent ae) -> {
+            f = Integer.parseInt(text1.getText());
+            algo = "";
+            algo2 = 5;
+        });
+        bhexa.addActionListener((ActionEvent ae) -> {
+            f = Integer.parseInt(text1.getText());
+            algo = "";
+            algo2 = 6;
+        });
+        borrar.addActionListener((ActionEvent ae) -> {
+            text1.setText("");
+            text3.setText("");
+            algo = "";
+            algo2 = 6;
+        });
 
         add(text1);
-        add(text2);
         add(text3);
         add(bsuma);
         add(bresta);
@@ -195,6 +226,9 @@ public class intefcalcu extends JPanel {
         add(bresultado);
         add(buttonconvert);
         add(buttonoperacion);
+        add(bbinario);
+        add(bhexa);
+        add(borrar);
         setLayout(null);
         setPreferredSize(new Dimension(400, 400));
     }

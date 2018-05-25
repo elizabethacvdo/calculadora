@@ -12,19 +12,19 @@ package Convertir;
 public class binario implements Convertir {
 
     @Override
-    public int convertir(int numero) {
-        int num;
-        String bistr="";
-        String bis2="";
+    public String convertir(int numero) {
+        
+        String bistr="",b="";
+       
         while(numero>=2){
             bistr+=String.valueOf(numero%2);
             numero=numero/2;
         }
         bistr+=numero;
-        for (int i=bistr.length();i<1;i--){
-            bis2=bis2+bistr.charAt(i);
+        for (int i=bistr.length()-1;i>=0;i--){
+            b=b+bistr.charAt(i);
         }
-        return num=Integer.parseInt(bis2);
+        return b;
     }
     
 }
